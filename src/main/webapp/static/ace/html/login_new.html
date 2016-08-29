@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登录 - 统一后台管理系统</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  	<link rel="stylesheet" href="../components/font-awesome/css/font-awesome.css" />
+  	<link rel="stylesheet" href="../assets/css/login.css"/> 
+	<!--[if lt IE 9]>
+	<script src="../components/html5shiv/dist/html5shiv.js"></script>
+	<script src="../components/respond/dest/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="../components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="../components/layer/layer.js"></script>
+</head>
+
+<body class="login-layout">
+
+	<div class="logintop">    
+		<span style="font-size: 12px;">欢迎使用统一后台管理系统</span>    
+		<ul>
+		<!-- <li><a href="#">返回首页</a></li>
+		<li><a href="#">帮助</a></li>
+		<li><a href="#">关于</a></li> -->
+		</ul>    
+	</div>
+
+    <div class="loginbody">
+
+		<div class="login-container">
+			<div class="center" style="margin-bottom: 20px;">
+				<h1>
+					<i class="fa fa-leaf green"></i>
+					<span class="white">统一后台管理系统</span>
+				</h1>
+				<h4 class="white">Background Management System</h4>
+			</div>
+
+			<div class="position-relative">
+				<div id="login-box" class="login-box widget-box no-border visible">
+					<div class="widget-body">
+						<div class="widget-main">
+							<h4 class="header">
+								<i class="fa fa-coffee green"></i>
+								用户登录
+							</h4>
+
+							<div class="login_icon"><img src="../assets/images/login.png" /></div>
+
+							<form class="form-horizontal">
+								<fieldset>
+									<label class="block clearfix">
+										<span class="block input-icon input-icon-left">
+											<input type="text" class="form-control" placeholder="登录名" name="登录名">
+										</span>
+									</label>
+
+									<label class="block clearfix">
+										<span class="block input-icon input-icon-left">
+											<input type="password" class="form-control" placeholder="密码" name="密码"/>
+										</span>
+									</label>
+
+									<div class="clearfix">
+										
+										<button type="button" class="width-35 pull-right btn btn btn-primary" id="login_btn">
+											<i class="fa fa-key"></i>
+											登录
+										</button>
+
+										<label class="inline">
+											<input type="checkbox" class="ace">
+											<span class="light-grey" style="font-size: 12px;">保存密码</span>
+										</label>
+									</div>
+
+								</fieldset>
+							</form>
+
+							<br>
+
+							<div class="social-or-login center">
+								<span class="bigger-110">通知</span>
+							</div>
+
+							<div class="social-login center" style="font-size: 13px; color: #393939; line-height: 1.5;">
+							  该系统不再对IE8以下浏览器支持，请见谅						
+							</div>
+						</div><!-- /widget-main -->
+
+						<div class="toolbar clearfix">
+												
+						</div>
+					</div><!-- /widget-body -->
+				</div><!-- /login-box -->
+			</div><!-- /position-relative -->
+		</div>
+
+	</div><!-- loginbody -->
+
+	<div class="loginbm">
+		Copyright © 2012-2016 <strong><a href="" class="grey">逍遥轩软件系统有限公司</a></strong> 
+	</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	$('#login_btn').on('click', function(){
+		     var num=0;
+			 var str="";
+	     $("input[type$='text']").each(function(n){
+	          if($(this).val()=="")
+	          {
+	               
+				   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
+	                title: '提示框',				
+					icon:0,								
+	          }); 
+			    num++;
+	            return false;            
+	          } 
+			 });
+			  if(num>0){  return false;}	 	
+	          else{
+				  layer.alert('登陆成功！',{
+	               title: '提示框',				
+				   icon:1,		
+				  });
+		          location.href="index.html";
+				   layer.close(index);	
+			  }		  		     						
+			
+	})
+</script>
